@@ -5,25 +5,35 @@
 class Yappblocker < Formula
   desc "Kill distracting macOS apps on a schedule"
   homepage "https://github.com/mieubrisse/yappblocker"
-  version "0.1.1"
+  version "0.2.0"
   license "MIT"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/mieubrisse/yappblocker/releases/download/v0.1.1/yappblocker_0.1.1_darwin_amd64.tar.gz"
-    sha256 "847f56d921a55f1756c3810dfc55c8e88cbaeeeb54025e52a1c315b6f4d3ebfa"
+    url "https://github.com/mieubrisse/yappblocker/releases/download/v0.2.0/yappblocker_0.2.0_darwin_amd64.tar.gz"
+    sha256 "70477ce61ba07314f85a56cda7f76945b392ef148cb402eddb5f16e78102dda9"
 
     define_method(:install) do
       bin.install "yappblocker"
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/mieubrisse/yappblocker/releases/download/v0.1.1/yappblocker_0.1.1_darwin_arm64.tar.gz"
-    sha256 "0f50cfea5121796697cbaf81c5afc3d835043e62e793e4469de476072ac9d6fb"
+    url "https://github.com/mieubrisse/yappblocker/releases/download/v0.2.0/yappblocker_0.2.0_darwin_arm64.tar.gz"
+    sha256 "374a741a592e324cd5c21f4477ca0be6d07e71041db98725be89102c4c4068a8"
 
     define_method(:install) do
       bin.install "yappblocker"
     end
+  end
+
+  def caveats
+    <<~EOS
+      ⚠️  To finish setup, run:
+
+        yappblocker init
+
+      This creates your config file and starts automatic enforcement.
+    EOS
   end
 
   test do
