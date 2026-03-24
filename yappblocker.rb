@@ -5,21 +5,21 @@
 class Yappblocker < Formula
   desc "Kill distracting macOS apps on a schedule"
   homepage "https://github.com/mieubrisse/yappblocker"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/mieubrisse/yappblocker/releases/download/v0.1.0/yappblocker_0.1.0_darwin_amd64.tar.gz"
-    sha256 "71ecba42dc5c06925fe5520ea5a772f51803c5dd872084c6516b96a9799c6e4c"
+    url "https://github.com/mieubrisse/yappblocker/releases/download/v0.1.1/yappblocker_0.1.1_darwin_amd64.tar.gz"
+    sha256 "847f56d921a55f1756c3810dfc55c8e88cbaeeeb54025e52a1c315b6f4d3ebfa"
 
     define_method(:install) do
       bin.install "yappblocker"
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/mieubrisse/yappblocker/releases/download/v0.1.0/yappblocker_0.1.0_darwin_arm64.tar.gz"
-    sha256 "9c6d1a8fabd62b42024593752d39e099d38ff7a7122cf844f5b3c0a3d5cafbc2"
+    url "https://github.com/mieubrisse/yappblocker/releases/download/v0.1.1/yappblocker_0.1.1_darwin_arm64.tar.gz"
+    sha256 "0f50cfea5121796697cbaf81c5afc3d835043e62e793e4469de476072ac9d6fb"
 
     define_method(:install) do
       bin.install "yappblocker"
